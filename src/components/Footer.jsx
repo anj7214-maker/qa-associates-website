@@ -30,7 +30,7 @@ export default function Footer() {
           <h3 className="font-extrabold">Services</h3>
           <div className="mt-4 grid gap-3 text-sm text-white/72">
             {footerServices.map((service) => (
-              <a key={service} href="#services" className="transition hover:text-white">{service}</a>
+              <a key={service} href="/services" className="transition hover:text-white">{service}</a>
             ))}
           </div>
         </div>

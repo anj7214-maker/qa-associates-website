@@ -1,4 +1,4 @@
-import { CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { services } from '../data.js';
 
 export default function Services() {
@@ -28,6 +28,7 @@ export default function Services() {
                   <Icon className="h-7 w-7" />
                 </div>
                 <h3 className="mt-5 text-xl font-extrabold text-navy">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{service.summary}</p>
                 <ul className="mt-5 space-y-3">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm font-semibold leading-6 text-slate-600">
@@ -36,6 +37,10 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+                <a href={`/services/${service.slug}`} className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-extrabold text-crimson transition hover:text-red-700">
+                  View Details
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </article>
             );
           })}

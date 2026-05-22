@@ -1,28 +1,32 @@
-import About from './components/About.jsx';
-import Contact from './components/Contact.jsx';
 import FloatingButtons from './components/FloatingButtons.jsx';
 import Footer from './components/Footer.jsx';
-import Hero from './components/Hero.jsx';
-import LocalPresence from './components/LocalPresence.jsx';
 import Navbar from './components/Navbar.jsx';
-import Process from './components/Process.jsx';
-import Services from './components/Services.jsx';
-import TrustBar from './components/TrustBar.jsx';
-import WhyChooseUs from './components/WhyChooseUs.jsx';
+import AboutPage from './pages/AboutPage.jsx';
+import ContactPage from './pages/ContactPage.jsx';
+import HomePage from './pages/HomePage.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
+import ServiceDetailPage from './pages/ServiceDetailPage.jsx';
+import ServicesPage from './pages/ServicesPage.jsx';
+import WhyUsPage from './pages/WhyUsPage.jsx';
+
+function CurrentPage() {
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+
+  if (path === '/') return <HomePage />;
+  if (path === '/about') return <AboutPage />;
+  if (path === '/services') return <ServicesPage />;
+  if (path.startsWith('/services/')) return <ServiceDetailPage slug={path.split('/').pop()} />;
+  if (path === '/why-us') return <WhyUsPage />;
+  if (path === '/contact') return <ContactPage />;
+  return <NotFoundPage />;
+}
 
 export default function App() {
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
-        <TrustBar />
-        <Services />
-        <WhyChooseUs />
-        <About />
-        <Process />
-        <LocalPresence />
-        <Contact />
+        <CurrentPage />
       </main>
       <Footer />
       <FloatingButtons />

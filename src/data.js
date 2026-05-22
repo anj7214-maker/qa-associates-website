@@ -30,11 +30,11 @@ export const whatsappUrl = `https://wa.me/91${firm.phone}?text=${encodeURICompon
 )}`;
 
 export const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Why Us', href: '/why-us' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export const trustItems = [
@@ -47,38 +47,52 @@ export const trustItems = [
 export const services = [
   {
     title: 'GST Services',
+    slug: 'gst-services',
     icon: FileCheck2,
     items: ['GST Registration', 'GST Return Filing', 'GST Compliance', 'GST Advisory'],
+    summary: 'GST registration, monthly and quarterly return filing, compliance review, and practical advisory for traders, contractors, and businesses.',
   },
   {
     title: 'Income Tax Services',
+    slug: 'income-tax-services',
     icon: Calculator,
     items: ['ITR Filing', 'Revised Returns', 'Tax Consultation', 'Tax Audit Support'],
+    summary: 'Income tax return filing, revised returns, consultation, and audit support for individuals, professionals, and business clients.',
   },
   {
     title: 'Accounting Services',
+    slug: 'accounting-services',
     icon: BookOpenCheck,
     items: ['Bookkeeping', 'Financial Statements', 'Accounting Support', 'Compliance Reporting'],
+    summary: 'Organized bookkeeping, financial statements, routine accounting support, and compliance reporting for local businesses.',
   },
   {
     title: 'Business Advisory',
+    slug: 'business-advisory',
     icon: BriefcaseBusiness,
     items: ['Business Registration', 'MSME / Udyam Registration', 'Business Setup Support', 'Documentation Assistance'],
+    summary: 'Business registration, Udyam/MSME support, setup guidance, and documentation assistance for new and growing businesses.',
   },
   {
     title: 'Loan Assistance',
+    slug: 'loan-assistance',
     icon: Banknote,
     items: ['Housing Loan Guidance', 'Car Loan Assistance', 'Project Report (DPR)'],
+    summary: 'Guidance for housing loans, car loans, and project report preparation for bank and business requirements.',
   },
   {
     title: 'Career & Education Support',
+    slug: 'career-education-support',
     icon: GraduationCap,
     items: ['Career Guidance', 'Admission Support', 'Resume Building', 'Skill Development'],
+    summary: 'Career guidance, admission support, resume building, skill development, and practical education consulting.',
   },
   {
     title: 'CA Services',
+    slug: 'ca-services',
     icon: Scale,
     items: ['Balance Sheet', 'Project Report', 'CA Certificate', 'Income Tax Audit'],
+    summary: 'CA-related documentation support including balance sheets, project reports, certificates, and income tax audit assistance.',
   },
 ];
 

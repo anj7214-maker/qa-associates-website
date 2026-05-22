@@ -17,11 +17,11 @@ export default function Hero() {
             Professional GST Filing, Income Tax, Accounting and Business Advisory Services in Mendhar, Poonch.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#services" className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-crimson px-6 py-4 text-sm font-extrabold shadow-xl shadow-crimson/25 transition hover:bg-red-700">
+            <a href="/services" className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-crimson px-6 py-4 text-sm font-extrabold shadow-xl shadow-crimson/25 transition hover:bg-red-700">
               Our Services
               <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#contact" className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/10 px-6 py-4 text-sm font-extrabold backdrop-blur transition hover:bg-white/15">
+            <a href="/contact" className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/10 px-6 py-4 text-sm font-extrabold backdrop-blur transition hover:bg-white/15">
               Contact Us
               <Phone className="h-4 w-4" />
             </a>

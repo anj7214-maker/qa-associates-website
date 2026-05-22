@@ -25,11 +25,11 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <a href="#contact" className="focus-ring hidden items-center gap-2 rounded-lg bg-crimson px-5 py-3 text-sm font-extrabold shadow-lg shadow-crimson/25 transition hover:bg-red-700 lg:inline-flex">
+          <a href="/contact" className="focus-ring hidden items-center gap-2 rounded-lg bg-crimson px-5 py-3 text-sm font-extrabold shadow-lg shadow-crimson/25 transition hover:bg-red-700 lg:inline-flex">
             Get Consultation
             <ArrowRight className="h-4 w-4" />
           </a>
-          <a href="#home" className="focus-ring rounded-lg bg-white p-1 shadow-lg shadow-black/10" aria-label="QA Associates logo">
+          <a href="/" className="focus-ring rounded-lg bg-white p-1 shadow-lg shadow-black/10" aria-label="QA Associates logo">
             <img src={firm.logo} alt="QA Associates logo" className="h-10 w-10 rounded-md object-contain sm:h-12 sm:w-12" />
           </a>
           <button
@@ -58,7 +58,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/contact"
               className="focus-ring mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-crimson px-5 py-3 text-sm font-extrabold"
               onClick={() => setIsOpen(false)}
             >
