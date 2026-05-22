@@ -50,28 +50,28 @@ export const services = [
     slug: 'gst-services',
     icon: FileCheck2,
     items: ['GST Registration', 'GST Return Filing', 'GST Compliance', 'GST Advisory'],
-    summary: 'GST registration, monthly and quarterly return filing, compliance review, and practical advisory for traders, contractors, and businesses.',
+    summary: 'GST in Mendhar, GST registration, monthly and quarterly return filing, compliance review, and practical advisory for traders, contractors, and businesses.',
   },
   {
     title: 'Income Tax Services',
     slug: 'income-tax-services',
     icon: Calculator,
     items: ['ITR Filing', 'Revised Returns', 'Tax Consultation', 'Tax Audit Support'],
-    summary: 'Income tax return filing, revised returns, consultation, and audit support for individuals, professionals, and business clients.',
+    summary: 'ITR filing in Mendhar, income tax return support, revised returns, tax consultation, and audit support for individuals, professionals, and business clients.',
   },
   {
     title: 'Accounting Services',
     slug: 'accounting-services',
     icon: BookOpenCheck,
     items: ['Bookkeeping', 'Financial Statements', 'Accounting Support', 'Compliance Reporting'],
-    summary: 'Organized bookkeeping, financial statements, routine accounting support, and compliance reporting for local businesses.',
+    summary: 'Organized bookkeeping, financial statements, routine accounting support, and compliance reporting for businesses in Mendhar and Poonch.',
   },
   {
     title: 'Business Advisory',
     slug: 'business-advisory',
     icon: BriefcaseBusiness,
     items: ['Business Registration', 'MSME / Udyam Registration', 'Business Setup Support', 'Documentation Assistance'],
-    summary: 'Business registration, Udyam/MSME support, setup guidance, and documentation assistance for new and growing businesses.',
+    summary: 'Business registration, Udyam/MSME support, setup guidance, and documentation assistance for new and growing businesses in Mendhar.',
   },
   {
     title: 'Loan Assistance',
@@ -92,7 +92,7 @@ export const services = [
     slug: 'ca-services',
     icon: Scale,
     items: ['Balance Sheet', 'Project Report', 'CA Certificate', 'Income Tax Audit'],
-    summary: 'CA-related documentation support including balance sheets, project reports, certificates, and income tax audit assistance.',
+    summary: 'CA services in Mendhar including balance sheets, project reports, CA certificates, and income tax audit assistance.',
   },
 ];
 

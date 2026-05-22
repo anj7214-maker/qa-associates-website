@@ -9,7 +9,7 @@ export default function Services() {
           <p className="section-kicker">Services</p>
           <h2 className="section-title">Professional tax, compliance, finance and advisory services.</h2>
           <p className="section-copy mx-auto">
-            Premium service support for individuals, professionals, shop owners, contractors, growing businesses, and students across Mendhar and Poonch.
+            Trusted GST services in Mendhar, reliable ITR filing in Mendhar, tax consultation, accounting, CA documentation, and business support for clients across Mendhar and Poonch.
           </p>
         </div>
 

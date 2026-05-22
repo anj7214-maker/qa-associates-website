@@ -14,7 +14,7 @@ export default function Hero() {
             Trusted GST, Tax & Business Solutions
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
-            Professional GST Filing, Income Tax, Accounting and Business Advisory Services in Mendhar, Poonch.
+            Professional GST in Mendhar, ITR filing in Mendhar, Income Tax, Accounting and Business Advisory Services in Poonch.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="/services" className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-crimson px-6 py-4 text-sm font-extrabold shadow-xl shadow-crimson/25 transition hover:bg-red-700">
@@ -54,7 +54,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="mt-7 grid gap-4">
-              {['GST and income tax filing', 'Accounting and CA documentation', 'Loan, DPR, and business support'].map((item) => (
+              {['GST and ITR filing in Mendhar', 'Accounting and CA documentation', 'Loan, DPR, and business support'].map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-lg bg-white p-4 shadow-sm">
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-crimson/10 text-crimson">
                     <FileText className="h-4 w-4" />
