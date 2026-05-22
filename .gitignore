@@ -1,0 +1,12 @@
+node_modules
+dist
+.npm-cache
+.env
+.env.local
+downloads-contact-sheet.jpg
+vite-dev.log
+vite-dev.err.log
+.vercel-data
+.vercel-local
+.vercel-roaming
+public/images

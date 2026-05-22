@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #14213d;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.financial-hero {
+  background:
+    linear-gradient(135deg, rgba(11, 44, 93, 0.96), rgba(11, 44, 93, 0.86)),
+    radial-gradient(circle at 76% 18%, rgba(255, 255, 255, 0.2), transparent 28%),
+    linear-gradient(115deg, transparent 0 58%, rgba(178, 34, 34, 0.16) 58% 100%),
+    linear-gradient(180deg, #eef4fb 0%, #ffffff 100%);
+}
+
+.financial-hero::before,
+.financial-hero::after,
+.local-presence::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.financial-hero::before {
+  top: 0;
+  bottom: auto;
+  height: 100%;
+  opacity: 0.32;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 74px 74px;
+  mask-image: linear-gradient(90deg, transparent, #000 34%, #000 82%, transparent);
+}
+
+.financial-hero::after {
+  height: 36%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04));
+  clip-path: polygon(0 100%, 0 62%, 11% 48%, 22% 74%, 35% 38%, 49% 76%, 62% 44%, 76% 72%, 88% 42%, 100% 68%, 100% 100%);
+}
+
+.local-presence::before {
+  height: 42%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(178, 34, 34, 0.16));
+  clip-path: polygon(0 100%, 0 68%, 14% 50%, 27% 72%, 42% 38%, 57% 76%, 72% 45%, 86% 70%, 100% 52%, 100% 100%);
+}
+
+.section-kicker {
+  @apply text-sm font-bold uppercase tracking-[0.18em] text-crimson;
+}
+
+.section-title {
+  @apply mt-3 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl;
+}
+
+.section-copy {
+  @apply mt-4 max-w-2xl text-base leading-7 text-slate-600;
+}
+
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-4 focus-visible:ring-crimson/20 focus-visible:ring-offset-2;
+}
