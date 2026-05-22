@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qa-associates-website.vercel.app/sitemap.xml
+Sitemap: https://qaassociates.in/sitemap.xml
