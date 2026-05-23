@@ -13,6 +13,7 @@ export default [
       sourceType: 'module',
       globals: {
         document: 'readonly',
+        fetch: 'readonly',
         window: 'readonly',
       },
       parserOptions: {
@@ -31,6 +32,20 @@ export default [
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    },
+  },
+  {
+    files: ['api/**/*.js'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        Buffer: 'readonly',
+        URLSearchParams: 'readonly',
+        console: 'readonly',
+        fetch: 'readonly',
+        process: 'readonly',
+      },
     },
   },
 ];

@@ -15,6 +15,7 @@ const pages = {
         copy: [
           'We may collect your name, phone number, email address, selected service, message, and documents or details you voluntarily share for consultation or inquiry purposes.',
           'For GST, ITR, tax, accounting, CA certification, balance sheet, project report, and compliance work, additional financial or identity information may be requested directly by our office only when required for the service.',
+          'Website inquiry details may be delivered to QA & Associates by email and may be recorded in a controlled lead register such as Google Sheets for follow-up and service tracking.',
         ],
       },
       {
@@ -22,6 +23,7 @@ const pages = {
         copy: [
           'Information is used to respond to inquiries, understand your service requirement, provide consultation, prepare documentation, support filing, and communicate about related professional services.',
           'We do not sell personal information. We do not use inquiry data for unrelated third-party marketing.',
+          'Inquiry automation services, such as email delivery or spreadsheet storage, are used only to support contact handling and client follow-up.',
         ],
       },
       {

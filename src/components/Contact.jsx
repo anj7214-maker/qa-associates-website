@@ -70,7 +70,7 @@ export default function Contact() {
     return { nextErrors, cleanedPhone };
   };
 
-  const submitForm = (event) => {
+  const submitForm = async (event) => {
     event.preventDefault();
     const now = Date.now();
 
@@ -99,25 +99,30 @@ export default function Contact() {
       message: sanitizeText(form.message).slice(0, 700),
     };
 
-    const subject = encodeURIComponent(`Website Inquiry - ${cleanForm.service}`);
-    const body = encodeURIComponent(
-      [
-        `Full Name: ${cleanForm.fullName}`,
-        `Email: ${cleanForm.email}`,
-        `Phone: ${cleanForm.phone}`,
-        `Service Required: ${cleanForm.service}`,
-        '',
-        'Message:',
-        cleanForm.message,
-        '',
-        'Consent: I agree to the Privacy Policy and consent to being contacted by QA & Associates.',
-      ].join('\n'),
-    );
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...cleanForm,
+          consent: form.consent,
+          website: form.website,
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
 
-    window.setTimeout(() => {
+      if (!response.ok || !result.ok) {
+        setStatus('error');
+        setErrors(result.errors || { form: result.message || 'Inquiry could not be sent. Please call or WhatsApp us.' });
+        return;
+      }
+
       setStatus('success');
-      window.location.href = `mailto:${firm.email}?subject=${subject}&body=${body}`;
-    }, 500);
+      setForm(initialForm);
+    } catch {
+      setStatus('error');
+      setErrors({ form: 'Inquiry could not be sent right now. Please call or WhatsApp QA & Associates.' });
+    }
   };
 
   return (
@@ -265,7 +270,7 @@ export default function Contact() {
           {status === 'success' && (
             <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-bold text-navy">
               <CheckCircle2 className="h-4 w-4 text-crimson" />
-              Inquiry prepared securely. Your email app should open now.
+              Inquiry sent successfully. QA & Associates will contact you soon.
             </p>
           )}
           <button
@@ -277,7 +282,7 @@ export default function Contact() {
             <ArrowRight className="h-4 w-4" />
           </button>
           <p className="mt-4 text-xs font-semibold leading-5 text-slate-500">
-            This static form uses browser-based mail submission now and is structured for CAPTCHA or secure backend processing later.
+            This secure inquiry form uses server-side validation, email delivery, and optional Google Sheets lead capture.
           </p>
         </form>
       </div>
