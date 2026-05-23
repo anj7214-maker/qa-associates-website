@@ -81,7 +81,9 @@ const sendEmail = async (lead) => {
 
   if (!response.ok) {
     const text = await response.text();
-    throw new Error(`Resend email failed: ${text}`);
+    const error = new Error(`Resend email failed: ${text}`);
+    error.code = 'RESEND_SEND_FAILED';
+    throw error;
   }
 };
 
@@ -116,7 +118,9 @@ const createGoogleAccessToken = async () => {
 
   if (!response.ok) {
     const text = await response.text();
-    throw new Error(`Google auth failed: ${text}`);
+    const error = new Error(`Google auth failed: ${text}`);
+    error.code = 'GOOGLE_AUTH_FAILED';
+    throw error;
   }
 
   const data = await response.json();
@@ -147,7 +151,9 @@ const appendToGoogleSheet = async (lead) => {
 
   if (!response.ok) {
     const text = await response.text();
-    throw new Error(`Google Sheets append failed: ${text}`);
+    const error = new Error(`Google Sheets append failed: ${text}`);
+    error.code = 'GOOGLE_SHEETS_FAILED';
+    throw error;
   }
 };
 
@@ -178,9 +184,18 @@ export default async function handler(request, response) {
     return json(response, 200, { ok: true, message: 'Inquiry sent successfully.' });
   } catch (error) {
     console.error(error);
+    const errorMessage = String(error?.message || '');
+    const diagnostic =
+      error?.code ||
+      (errorMessage.includes('RESEND_API_KEY') && 'RESEND_API_KEY_MISSING') ||
+      (errorMessage.includes('Resend email failed') && 'RESEND_SEND_FAILED') ||
+      (errorMessage.includes('Google') && 'GOOGLE_SHEETS_FAILED') ||
+      'CONTACT_SEND_FAILED';
+
     return json(response, 500, {
       ok: false,
       message: 'Inquiry could not be sent right now. Please call or WhatsApp QA & Associates.',
+      diagnostic,
     });
   }
 }
