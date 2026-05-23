@@ -20,11 +20,13 @@ export const firm = {
   tagline: 'GST & Income Tax Consultants',
   phone: '9906688040',
   dialPhone: '+919906688040',
+  displayEmail: 'qaacc17 [at] gmail [dot] com',
   email: 'qaacc17@gmail.com',
   address: 'Opp. JK Bank Khidmat Centre, Mendhar, Poonch, Jammu & Kashmir',
   logo: '/assets/qa-associates-logo.jpeg',
 };
 
+// Future-ready domain email options: info@qaassociates.in, support@qaassociates.in.
 export const whatsappUrl = `https://wa.me/91${firm.phone}?text=${encodeURIComponent(
   'Hello QA & Associates, I need consultation for GST, tax, or business services.',
 )}`;
@@ -127,6 +129,15 @@ export const footerServices = [
   'Loan Assistance',
   'Business Advisory',
 ];
+
+export const legalLinks = [
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms & Conditions', href: '/terms' },
+  { label: 'Disclaimer', href: '/disclaimer' },
+  { label: 'Contact / Data Request', href: '/data-request' },
+];
+
+export const serviceAreas = ['Mendhar', 'Poonch', 'Jammu & Kashmir'];
 
 export const heroHighlights = [
   { title: 'GST Filing', copy: 'Returns, registration, and compliance guidance.' },

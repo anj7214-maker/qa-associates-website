@@ -30,7 +30,7 @@ export default function Navbar() {
             <ArrowRight className="h-4 w-4" />
           </a>
           <a href="/" className="focus-ring rounded-lg bg-white p-1 shadow-lg shadow-black/10" aria-label="QA Associates logo">
-            <img src={firm.logo} alt="QA Associates logo" className="h-10 w-10 rounded-md object-contain sm:h-12 sm:w-12" />
+            <img src={firm.logo} alt="QA Associates logo" className="h-10 w-10 rounded-md object-contain sm:h-12 sm:w-12" loading="eager" decoding="async" />
           </a>
           <button
             type="button"

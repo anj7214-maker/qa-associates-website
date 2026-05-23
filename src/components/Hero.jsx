@@ -41,7 +41,7 @@ export default function Hero() {
           <div className="rounded-lg bg-mist p-6">
             <div className="grid gap-6 sm:grid-cols-[0.78fr_1fr] sm:items-center">
               <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
-                <img src={firm.logo} alt="QA Associates logo" className="mx-auto aspect-square w-full max-w-[190px] rounded-md object-contain" />
+                <img src={firm.logo} alt="QA Associates logo" className="mx-auto aspect-square w-full max-w-[190px] rounded-md object-contain" loading="lazy" decoding="async" />
               </div>
               <div>
                 <div className="flex items-center gap-3">

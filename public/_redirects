@@ -1,0 +1,4 @@
+http://qaassociates.in/* https://qaassociates.in/:splat 301!
+http://www.qaassociates.in/* https://qaassociates.in/:splat 301!
+https://qa-associates-website.vercel.app/* https://qaassociates.in/:splat 301!
+/* /index.html 200
