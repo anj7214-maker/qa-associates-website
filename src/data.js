@@ -20,7 +20,7 @@ export const firm = {
   tagline: 'GST & Income Tax Consultants',
   phone: '9906688040',
   dialPhone: '+919906688040',
-  displayEmail: 'qaacc17 [at] gmail [dot] com',
+  displayEmail: 'qaacc17@gmail.com',
   email: 'qaacc17@gmail.com',
   address: 'Opp. JK Bank Khidmat Centre, Mendhar, Poonch, Jammu & Kashmir',
   logo: '/assets/qa-associates-logo.jpeg',
