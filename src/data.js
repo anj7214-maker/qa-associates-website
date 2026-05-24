@@ -23,6 +23,7 @@ export const firm = {
   displayEmail: 'qaacc17@gmail.com',
   email: 'qaacc17@gmail.com',
   address: 'Opp. JK Bank Khidmat Centre, Mendhar, Poonch, Jammu & Kashmir',
+  mapUrl: 'https://maps.app.goo.gl/qUWZKXhrmbxRk2e46?g_st=awb',
   logo: '/assets/qa-associates-logo.jpeg',
 };
 

@@ -1,5 +1,5 @@
-import { MapPin, MessageCircle, Phone } from 'lucide-react';
-import { firm, whatsappUrl } from '../data.js';
+import { MapPin, Phone } from 'lucide-react';
+import { firm } from '../data.js';
 
 export default function LocalPresence() {
   return (
@@ -21,9 +21,9 @@ export default function LocalPresence() {
               <Phone className="h-4 w-4" />
               Call Now
             </a>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-crimson px-4 py-3 text-sm font-extrabold text-white transition hover:bg-red-700">
-              <MessageCircle className="h-4 w-4" />
-              WhatsApp
+            <a href={firm.mapUrl} target="_blank" rel="noreferrer" className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-crimson px-4 py-3 text-sm font-extrabold text-white transition hover:bg-red-700">
+              <MapPin className="h-4 w-4" />
+              View Map
             </a>
           </div>
         </div>
