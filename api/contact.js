@@ -19,19 +19,23 @@ const getClientIp = (request) =>
   'unknown';
 
 const validatePayload = (payload) => {
+  const source = sanitizeText(payload.source, 80) || 'Website';
+  const isReadinessHub = source.startsWith('Readiness Hub');
   const cleaned = {
     fullName: sanitizeText(payload.fullName, 80),
     email: sanitizeText(payload.email, 120).toLowerCase(),
     phone: String(payload.phone || '').replace(/\D/g, '').slice(-10),
     service: sanitizeText(payload.service, 80),
     message: sanitizeText(payload.message, 700),
+    location: sanitizeText(payload.location, 80),
+    source,
     consent: Boolean(payload.consent),
     website: sanitizeText(payload.website, 80),
   };
 
   const errors = {};
   if (cleaned.fullName.length < 2) errors.fullName = 'Full name is required.';
-  if (!isValidEmail(cleaned.email)) errors.email = 'Valid email is required.';
+  if (!isReadinessHub && !isValidEmail(cleaned.email)) errors.email = 'Valid email is required.';
   if (!isValidIndianMobile(cleaned.phone)) errors.phone = 'Valid Indian mobile number is required.';
   if (!cleaned.service) errors.service = 'Service is required.';
   if (cleaned.message.length < 10) errors.message = 'Message must be at least 10 characters.';
@@ -47,7 +51,9 @@ const createEmailHtml = (lead) => `
     <p><strong>Full Name:</strong> ${lead.fullName}</p>
     <p><strong>Email:</strong> ${lead.email}</p>
     <p><strong>Phone:</strong> ${lead.phone}</p>
+    ${lead.location ? `<p><strong>Location:</strong> ${lead.location}</p>` : ''}
     <p><strong>Service Required:</strong> ${lead.service}</p>
+    <p><strong>Lead Source:</strong> ${lead.source || 'Website'}</p>
     <p><strong>Message:</strong></p>
     <p>${lead.message}</p>
     <hr />
@@ -73,7 +79,7 @@ const sendEmail = async (lead) => {
     body: JSON.stringify({
       from,
       to,
-      reply_to: lead.email,
+      ...(isValidEmail(lead.email) ? { reply_to: lead.email } : {}),
       subject: `Website Inquiry - ${lead.service}`,
       html: createEmailHtml(lead),
     }),
@@ -144,7 +150,7 @@ const appendToGoogleSheet = async (lead) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        values: [[new Date().toISOString(), lead.fullName, lead.email, lead.phone, lead.service, lead.message, 'Website', 'Consent accepted']],
+        values: [[new Date().toISOString(), lead.fullName, lead.email || '', lead.phone, lead.service, lead.message, lead.source || 'Website', 'Consent accepted']],
       }),
     },
   );

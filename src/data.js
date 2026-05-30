@@ -36,6 +36,7 @@ export const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
+  { label: 'Tools', href: '/readiness-hub' },
   { label: 'Why Us', href: '/why-us' },
   { label: 'Contact', href: '/contact' },
 ];

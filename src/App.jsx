@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage.jsx';
 import HomePage from './pages/HomePage.jsx';
 import LegalPage from './pages/LegalPage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
+import ReadinessHubPage from './pages/ReadinessHubPage.jsx';
 import ServiceDetailPage from './pages/ServiceDetailPage.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
 import WhyUsPage from './pages/WhyUsPage.jsx';
@@ -61,6 +62,13 @@ function CurrentPage() {
       'Contact QA & Associates | GST, ITR & CA Services in Mendhar',
       'Contact QA & Associates for GST filing, ITR filing, tax consultation, CA certificate, balance sheet, project report, and compliance support in Mendhar.',
       <ContactPage />,
+    );
+  }
+  if (path === '/readiness-hub') {
+    return page(
+      'Tax & Document Readiness Hub | GST, ITR & Loan File Check',
+      'Use the QA & Associates Tax and Document Readiness Hub to check GST registration need, ITR regime estimate, and loan document readiness in Mendhar and Poonch.',
+      <ReadinessHubPage />,
     );
   }
   if (path === '/privacy-policy') return page('Privacy Policy | QA & Associates', 'Privacy policy for QA & Associates website inquiries, GST, ITR, CA documentation, and contact data handling.', <LegalPage type="privacy-policy" />);
