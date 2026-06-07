@@ -4,9 +4,7 @@
 
 Please do not report security vulnerabilities in public issues, pull requests, or comments.
 
-Use GitHub private vulnerability reporting from the repository Security tab.
-
-If private vulnerability reporting is unavailable, contact the repository owner through a trusted private channel and include:
+If GitHub private vulnerability reporting is enabled for this repository, use that feature from the repository Security tab. Otherwise, contact the repository owner through a trusted private channel and include:
 
 - The affected URL, file, or feature.
 - A short description of the issue.
@@ -15,9 +13,7 @@ If private vulnerability reporting is unavailable, contact the repository owner 
 
 ## Sensitive Data Rules
 
-Never commit passwords, API keys, private keys, access tokens, session cookies, database URLs, or `.env` files.
-
-If a secret is accidentally committed, treat it as compromised, revoke it immediately, rotate it, and remove it from Git history if needed.
+Never commit passwords, API keys, private keys, access tokens, session cookies, database URLs, or `.env` files. If a secret is accidentally committed, treat it as compromised, revoke it immediately, rotate it, and remove it from Git history if needed.
 
 ## Supported Branch
 
